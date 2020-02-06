@@ -3,8 +3,7 @@
 \usepackage{xcolor}
 %\usepackage[a4paper]{geometry}%
 \usepackage{tikz}
-\usepackage{todonotes}
-\usetikzlibrary{shapes.geometric, arrows, decorations.pathreplacing}
+\usetikzlibrary{shapes.geometric, arrows, decorations.pathreplacing, positioning}
 
 \title{What the Frick}
 \author{David Kasofsky}
@@ -85,7 +84,7 @@
 \defpainting{louisbust}{Louis XVI}
 
 \begin{document}
-\tableofcontents{}
+%\tableofcontents{}%
 \maketitle{}
 
 \section*{Characters}
@@ -99,38 +98,51 @@ In order of importance:
 \end{description}
 
 \section*{Summary}
-\cyl{} receives a letter from \ccurator{}. The letter says she is believed to be a long-lost relative of \cfrick{} and is invited to the Frick Museum to confirm this. In fact \ccurator{} and \cfrick{} are trying to find a living Frick descendant for nefarious purposes. \cyl{} goes to the museum and discovers that the paintings are magical. Eventually \cyl{} realizes she has been trapped in the museum and must solve the mystery of the paintings in order to escape. \cyl{} ultimately discovers that \cfrick{} seeks to use her body as a vessel so his soul can return from the Art World to the Real World. \cyl{} defeats \cfrick{} and banishes him to the Void - for now.
+\cyl{} receives a letter from \ccurator{}. The letter says she is a long-lost relative of \cfrick{} and is invited to the Frick Museum Centennial. In fact \ccurator{} and \cfrick{} are trying to find a living Frick descendant for nefarious purposes. \cyl{} goes to the Centennial and meets \ccurator{}. In a roped-off part of the museum, \cyl{} discovers a magical portrait that can talk. At the portrait's bidding, she enters the Art World via another painting that acts as a portal. When she returns to the museum she finds the party is over and she is locked inside the museum. \cyl{} resolves to investigate the magic paintings in the meantime. \cyl{} ultimately discovers that \cfrick{} seeks to use her body as a vessel so his soul can return from the Art World to the Real World. \cyl{} defeats \cfrick{} and banishes him to the Void - for now.
 
 \subsection{Plot Chart}
 
 \begin{center}
   \begin{tikzpicture}[node distance=1.2cm]
   % nodes
-    \node (letter) [plain] {Receive Letter};
-    \node (arrival) [plain, below of = letter] {Arrive at The Frick};
-    \node (curator) [plain, below of = arrival] {Meet The Curator};
-    \node (magic1) [plain, below of = curator] {Encounter Magic Painting (1)};
-    \node (ppuzz) [plain, below of = magic1] {Painting Puzzles (3)};
-    \node (trapped) [plain, below of = ppuzz] {Lured into Frick's Trap (1-2)};
-    \node (power) [plain, below of = trapped] {Power to Defeat Frick (3)};
-    \node (final) [plain, below of = power] {Final Confrontation (1)};
-    \node (escape) [plain, below of = final] {Escape the Museum};
-    \node (pctitle) [font=\large\bfseries, above of = letter] {Plot Chart};
+    \node (invitation) [plain] {Receive Invitation};
+    \node (party) [plain, below of = invitation] {Go to Party};
+    \node (artworld) [plain, below of = party] {Enter Art World};
+    \node (trapped) [plain, below of = artworld] {Trapped in Museum};
+    \node (learntruth) [plain, below of = trapped] {Truth about Frick};
+    \node (findhelp) [plain, below of = learntruth] {Find Help};
+    \node (prepareritual) [plain, below of = findhelp] {Prepare the Ritual};
+    \node (holygrail) [plain, below of = prepareritual] {Find the Holy Grail};
+    \node (frickskull) [plain, left = of holygrail] {Find Frick's Skull};
+    \node (incantation) [plain, right = of holygrail] {Find the Magic Words};
+    \node (showdown) [plain, below of = holygrail] {Showdown with Frick};
+    \node (pctitle) [font=\large\bfseries, above of = invitation] {Plot Chart};
   %arrows
-    \draw [arrow] (letter) -- (arrival);
-    \draw [arrow] (arrival) -- (curator);
-    \draw [arrow] (curator) -- (magic1);
-    \draw [arrow] (magic1) -- (ppuzz);
-    \draw [arrow] (ppuzz) -- (trapped);
-    \draw [arrow] (trapped) -- (power);
-    \draw [arrow] (power) -- (final);
-    \draw [arrow] (final) -- (escape);
-  %chapter braces
-    \draw [decorate, decoration={brace, amplitude=10pt, raise=4pt}] (-3,-4) -- (-3, 0.5) node [black, midway, xshift=-1.5cm] {Chapter 1};
-    \draw [decorate, decoration={brace, amplitude=10pt, raise=4pt}] (-3,-6.5) -- (-3, -4.5) node [black, midway, xshift=-1.5cm] {Chapter 2};
-    \draw [decorate, decoration={brace, amplitude=10pt, raise=4pt}] (-3,-10) -- (-3, -7) node [black, midway, xshift=-1.5cm] {Chapter 3};
+    \draw [arrow] (invitation) -- (party);
+    \draw [arrow] (party) -- (artworld);
+    \draw [arrow] (artworld) -- (trapped);
+    \draw [arrow] (trapped) -- (learntruth);
+    \draw [arrow] (learntruth) -- (findhelp);
+    \draw [arrow] (findhelp) -- (prepareritual);
+    \draw [arrow] (prepareritual) -- (holygrail);
+    \draw [arrow] (prepareritual) -- (frickskull);
+    \draw [arrow] (prepareritual) -- (incantation);
+    \draw [arrow] (holygrail) -- (showdown);
+    \draw [arrow] (frickskull) -- (showdown);
+    \draw [arrow] (incantation) -- (showdown);
   \end{tikzpicture}
 \end{center}
+
+\cyl{} receives a mysterious letter in the mail containing an invitation to The Frick Collection Bicentennial Event. \cyl{} attends and finds it to be a stuffy party full of old effete rich people confined to a corner of the museum. Bored, \cyl{} sneaks out of the party to explore the museum. \cyl{} is accidentally transported to the magical Art World, and when she returns to the Museum she finds that it is frozen in time. \cyl{} learns that Frick is behind the magic and that she must complete the spell to confront Frick and escape.
+
+\section{Receive Invitation}
+Opening cutscene. \cyl{} receives a letter in the mail. Inside is an invitation to the Frick Bicentennial Party, hosted at The Frick Collection. As an Art History student, \cyl{} is intrigued.
+
+\section{Go to Party}
+\cyl{} arrives at the museum. She is greeted in the \rentry{} by an usher and directed to the party. There is an usher standing near the entrance to the \rgardencourt{} and \rreception{} is roped off. The party is taking place in \revest{}, \rwvest{}, \rdining{}, \ranter{}, and \rboucher{}.
+
+
+
 
 \newpage
 \section{Chapter 1: Welcome to the Frick}
@@ -171,7 +183,7 @@ Upon entering the \rreception{}, \cbagchecker{} will ask \cyl{} to check \iylbag
 \subsection{Meet The Curator}
 \ccurator{} enters and explains about the Frick estate. . \ccurator{} says he requires simply requires a DNA sample to confirm her ancestry. Before \cyl{} can fully respond, \ccurator{} gleefully plucks a hair from \cyl{}'s head (creepy) and declares it sufficient for his purposes. He then bids \cyl{} to explore the museum while he performs the test.
 
-\cyl{} sets out to explore the museum. She must move from \rreception{} to \rentry{}, where she is given the \iaudioguide{} from \chelpdesk{}. \cyl{} will remind the player to use the \iaudioguide{} as she begins to explore the museum. \todo{rope off \rgardencourt{} initially so player has to proceed through \revest{} first?}
+\cyl{} sets out to explore the museum. She must move from \rreception{} to \rentry{}, where she is given the \iaudioguide{} from \chelpdesk{}. \cyl{} will remind the player to use the \iaudioguide{} as she begins to explore the museum. rope off \rgardencourt{} initially so player has to proceed through \revest{} first?
 
 \subsection{Encounter Magic Painting}
 
@@ -208,6 +220,7 @@ Jodrell is evasive and nervous and says he is not supposed to talk to strangers.
 \section{Items}
 \section{Random Ideas}
 \begin{itemize}
+  \item Ru Paul Jodrell
   \item before \cyl{} is captured by \cfrick{}, a painting warns her not to do whatever action gets her captured. However later the game forces her to acknowledge the warning and proceed in spite of it.
   \item when \cyl{} is captured, we do an homage to the Guybrush capture scene in MI2 where he has to escape from dangling over the cauldron
   \item upon capture, \iaudioguide{} spontaneously transforms into a Voodoo Priest wearing crazy robes and big hat and also whips out an ornate ritual knife from god knows where. maybe he hovers surrounded by an evil aura?
@@ -258,5 +271,7 @@ King Louix XV (rather the bust of) as a child is being educated in a number of R
   \item Day of the Tentacle
   \item The Pandora Directive
   \item Gabriel Knight 3
+  \item st francis receiving the revelation - when you see it at first there is a flash of lightning
+  \item using audio guide on paintings reveals dialogue options - so i can make it ne essary for the player to listen to the audio guide's manipulative messages
 \end{itemize}
 \end{document}
